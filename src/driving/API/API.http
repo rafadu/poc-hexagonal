@@ -1,0 +1,43 @@
+@API_HostAddress = http://localhost:5003
+
+GET {{API_HostAddress}}/
+Accept: application/json
+
+###
+
+POST {{API_HostAddress}}/api/todo
+Content-Type: application/json
+
+{
+    "title":"concluir Poc",
+    "description":"Terminar Poc Da Arquitetura"
+}
+
+###
+
+GET {{API_HostAddress}}/api/todo
+Accept: application/json
+
+###
+
+GET {{API_HostAddress}}/api/todo/bc66bff1-920f-4564-b057-8eca4c401004
+Accept: application/json
+
+###
+
+PUT {{API_HostAddress}}/api/todo/bc66bff1-920f-4564-b057-8eca4c401004
+Content-Type: application/json
+
+{
+    "title":"concluir Poc de vez",
+    "description":"Terminar Poc Da Arquitetura Hexagonal",
+    "isCompleted":false
+}
+
+###
+
+PUT {{API_HostAddress}}/api/todo/conclude-todo/bc66bff1-920f-4564-b057-8eca4c401004
+
+###
+
+DELETE {{API_HostAddress}}/api/todo/bc66bff1-920f-4564-b057-8eca4c401004
